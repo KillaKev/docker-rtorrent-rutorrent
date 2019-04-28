@@ -235,7 +235,7 @@ chown nginx. /var/www/rutorrent/conf/config.php
 fi
 
 # Symlinking ruTorrent config
-ln -sf ${RUTORRENT_HOME}/conf /var/www/rutorrent/conf/*
+#ln -sf ${RUTORRENT_HOME}/conf /var/www/rutorrent/conf/*
 
 # Remove ruTorrent core plugins
 for i in ${RU_REMOVE_CORE_PLUGINS//,/ }
