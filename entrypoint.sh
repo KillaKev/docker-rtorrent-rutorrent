@@ -233,6 +233,11 @@ chown nginx. /var/www/rutorrent/conf/config.php
 
 # Symlinking ruTorrent config
 ln -sf ${RUTORRENT_HOME}/conf/users /var/www/rutorrent/conf/users
+if [ ! -f ${RUTORRENT_HOME}/conf/config.php ]; then
+  echo "Symlinking ruTorrent config.php file..."
+  mv /var/www/rutorrent/conf/config.php ${RUTORRENT_HOME}/conf/config.php
+  ln -sf ${RUTORRENT_HOME}/conf/config.php /var/www/rutorrent/conf/config.php
+fi
 if [ ! -f ${RUTORRENT_HOME}/conf/access.ini ]; then
   echo "Symlinking ruTorrent access.ini file..."
   mv /var/www/rutorrent/conf/access.ini ${RUTORRENT_HOME}/conf/access.ini
