@@ -162,8 +162,10 @@ if [ ! -f ${RTORRENT_HOME}/.rtorrent.rc ]; then
 fi
 
 # ruTorrent config
-echo "Bootstrapping ruTorrent configuration..."
-cat > /var/www/rutorrent/conf/config.php <<EOL
+echo "Checking ruTorrent configuration..."
+if [ ! -f ${RUTORRENT_HOME}/conf/config.php ]; then
+  echo "Bootstrapping ruTorrent configuration..."
+  cat > /var/www/rutorrent/conf/config.php <<EOL
 <?php
 
 // For snoopy client
@@ -230,6 +232,7 @@ cat > /var/www/rutorrent/conf/config.php <<EOL
 \$locale = '${RU_LOCALE}';
 EOL
 chown nginx. /var/www/rutorrent/conf/config.php
+fi
 
 # Symlinking ruTorrent config
 ln -sf ${RUTORRENT_HOME}/conf /var/www/rutorrent/conf
