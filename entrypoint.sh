@@ -196,7 +196,7 @@ if [ ! -f ${RUTORRENT_HOME}/conf/config.php ]; then
 \$overwriteUploadedTorrents = ${RU_OVERWRITE_UPLOADED_TORRENTS};
 
 // Upper available directory. Absolute path with trail slash.
-\$topDirectory = '/data';
+\$topDirectory = '/downloads';
 \$forbidUserSettings = ${RU_FORBID_USER_SETTINGS};
 
 // For web->rtorrent link through unix domain socket
