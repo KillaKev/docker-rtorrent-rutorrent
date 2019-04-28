@@ -232,22 +232,7 @@ EOL
 chown nginx. /var/www/rutorrent/conf/config.php
 
 # Symlinking ruTorrent config
-ln -sf ${RUTORRENT_HOME}/conf/users /var/www/rutorrent/conf/users
-if [ ! -f ${RUTORRENT_HOME}/conf/config.php ]; then
-  echo "Symlinking ruTorrent config.php file..."
-  mv /var/www/rutorrent/conf/config.php ${RUTORRENT_HOME}/conf/config.php
-  ln -sf ${RUTORRENT_HOME}/conf/config.php /var/www/rutorrent/conf/config.php
-fi
-if [ ! -f ${RUTORRENT_HOME}/conf/access.ini ]; then
-  echo "Symlinking ruTorrent access.ini file..."
-  mv /var/www/rutorrent/conf/access.ini ${RUTORRENT_HOME}/conf/access.ini
-  ln -sf ${RUTORRENT_HOME}/conf/access.ini /var/www/rutorrent/conf/access.ini
-fi
-if [ ! -f ${RUTORRENT_HOME}/conf/plugins.ini ]; then
-  echo "Symlinking ruTorrent plugins.ini file..."
-  mv /var/www/rutorrent/conf/plugins.ini ${RUTORRENT_HOME}/conf/plugins.ini
-  ln -sf ${RUTORRENT_HOME}/conf/plugins.ini /var/www/rutorrent/conf/plugins.ini
-fi
+ln -sf ${RUTORRENT_HOME}/conf /var/www/rutorrent/conf
 
 # Remove ruTorrent core plugins
 for i in ${RU_REMOVE_CORE_PLUGINS//,/ }
