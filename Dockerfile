@@ -24,9 +24,6 @@ ENV RTORRENT_VERSION=0.9.7 \
   MKTORRENT_VERSION=1.1 \
   NGINX_DAV_VERSION=3.0.0
 
-# Create directory 
-RUN mkdir -p /usr/src
-
 RUN apk --update --no-cache add -t build-dependencies \
     autoconf \
     automake \
